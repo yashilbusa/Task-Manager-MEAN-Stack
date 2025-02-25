@@ -45,14 +45,46 @@ app.post("/lists",(req,res)=>{
     res.status(200).send(newList)
 })
 
-app.put("/lists/:id",async(req,res)=>{
-    await List.updateOne({ _id:req.params.id}, { $set: req.body }).then(()=>{
+app.put("/lists/:listId",async(req,res)=>{
+    await List.updateOne({ _id:req.params.listId}, { $set: req.body }).then(()=>{
         res.status(200)
     })
 })
 
-app.delete("/lists/:id",async(req,res)=>{
-    await List.deleteOne({ _id:req.params.id}).then(()=>{
+app.delete("/lists/:listId",async(req,res)=>{
+    await List.deleteOne({ _id:req.params.listId}).then(()=>{
         res.status(200)
     })
+})
+
+app.get("/lists/:listId/tasks",async(req,res)=>{
+    const allTask = await Task.find({listId:req.params.listId})
+    res.status(200).send(allTask)
+})
+
+app.post("/lists/:listId/tasks",(req,res)=>{
+
+    const newTask = new Task({
+        title:req.body.title,
+        listId:req.params.listId
+    })
+    newTask.save()
+    res.status(200).send(newTask)
+})
+
+app.put("/lists/:listId/tasks/:taskId",async(req,res)=>{
+    await Task.updateOne({ _id:req.params.taskId,listId:req.params.listId}, { $set: req.body }).then(()=>{
+        res.status(200)
+    })
+})
+
+app.delete("/lists/:listId/tasks/:taskId",async(req,res)=>{
+    await Task.deleteOne({ _id:req.params.taskId,listId:req.params.listId}).then(()=>{
+        res.status(200)
+    })
+})
+
+app.get("/lists/:listId/tasks/:taskId",async(req,res)=>{
+    const allTask = await Task.find({ _id:req.params.taskId,listId:req.params.listId})
+    res.status(200).send(allTask)
 })
