@@ -63,12 +63,13 @@
 
 .button{
     font-family: 'Courier New', Courier, monospace;
-    margin-top: 200px;
+    margin-top: 190px;
     margin-right: 100px;
-    padding: 3px;
+    padding: 5px;
     border: 1px solid;
     border-radius: 10px;
     cursor: pointer;
+    background-color: lightgreen;
 }
 
 .button:hover{
