@@ -18,22 +18,55 @@
     display: flex;
     flex-direction: column;
     width:200px;
-    background-color: white;
-    padding: 40px;
+    background-color: lightcyan;
+    padding: 30px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
 .task-list{
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    padding: 40px;
-    background-color: white;
+    padding: 30px;
+    background-color: rgb(231, 227, 227);
 }
 
 .title{
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
 }
+
+.list-menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-menu-item{
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    border-radius: 5px;
+    width: 100%;
+    color: brown;
+}
+
+.button{
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 200px;
+    margin-right: 100px;
+    padding: 3px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.task{
+    background-color: white;
+    padding: 0px 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+
