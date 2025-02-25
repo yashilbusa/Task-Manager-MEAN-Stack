@@ -13,7 +13,7 @@ export class TaskViewComponent {
   constructor(private taskService:TaskService) { }
 
   createList(){
-    this.taskService.createList('Test').subscribe((res:any)=>{
+    this.taskService.createList('MEAN Stack').subscribe((res:any)=>{
       console.log(res)
     })
   }

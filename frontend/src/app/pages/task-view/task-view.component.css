@@ -1,11 +1,3 @@
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
 .task-manager{
     display: flex;
     width: 75%;
@@ -34,22 +26,16 @@
     background-color: rgb(231, 227, 227);
 }
 
-.title{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
-}
-
 .list-menu{
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    margin-right: 25px;
 }
 
 .list-menu-item{
     display: flex;
     align-items: center;
-    padding: 0px 15px;
+    padding: 5px 15px;
     margin-top: 5px;
     border-radius: 5px;
     width: 100%;
@@ -63,22 +49,23 @@
 
 .button{
     font-family: 'Courier New', Courier, monospace;
-    margin-top: 190px;
+    margin-top: 200px;
     margin-right: 100px;
     padding: 5px;
     border: 1px solid;
     border-radius: 10px;
     cursor: pointer;
-    background-color: lightgreen;
+    background-color: aqua;
+    width: 100%;
 }
 
 .button:hover{
-    background-color: aqua;
+    background-color: lightblue;
 }
 
 .task{
     background-color: white;
-    padding: 0px 15px;
+    padding: 5px 15px;
     border-radius: 5px;
     margin-top: 5px;
     cursor: pointer;

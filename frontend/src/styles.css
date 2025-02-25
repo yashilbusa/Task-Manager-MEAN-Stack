@@ -1,8 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 html{
     background: rgb(89, 206, 194);
+    font-family: 'Times New Roman', Times, serif;
 }
+
 
 html,body{
     height: 100%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.title{
+    font-size: 24px;
 }
