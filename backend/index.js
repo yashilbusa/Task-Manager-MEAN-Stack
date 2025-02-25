@@ -3,6 +3,10 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
+import List from './models/listModel.js'
+import Task from './models/taskModel.js'
+
+
 const app = express()
 const port = 3030
 
