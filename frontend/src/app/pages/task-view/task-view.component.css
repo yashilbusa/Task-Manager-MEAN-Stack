@@ -42,15 +42,23 @@
 .list-menu{
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    margin-right: 25px;
 }
 
 .list-menu-item{
     display: flex;
     align-items: center;
     padding: 0px 15px;
+    margin-top: 5px;
     border-radius: 5px;
     width: 100%;
     color: brown;
+    background-color: lightgray;
+}
+
+.list-menu-item:hover{
+    background-color: lightpink;
 }
 
 .button{
@@ -60,6 +68,11 @@
     padding: 3px;
     border: 1px solid;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: aqua;
 }
 
 .task{
@@ -67,6 +80,10 @@
     padding: 0px 15px;
     border-radius: 5px;
     margin-top: 5px;
+    cursor: pointer;
 }
 
+.task:hover{
+    background-color: lightgray
+}
 
