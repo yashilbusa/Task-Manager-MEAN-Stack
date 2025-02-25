@@ -20,3 +20,19 @@ try{
 }catch(err){
     console.log(`Error Connecting to MongoDB ${err.message}`)
 }
+
+app.get("/lists",(req,res)=>{
+    res.send("Hello World")
+})
+
+app.post("/lists",(req,res)=>{
+
+})
+
+app.patch("/lists/:id",(req,res)=>{
+
+})
+
+app.delete("/lists/:id",(req,res)=>{
+    
+})
