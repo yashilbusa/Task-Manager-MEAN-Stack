@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
 
-const ListSchema = new mongoose.Schema({
+const listSchema = new mongoose.Schema({
     title:{
         type:String,
         require:true,
     }
 })
 
-export const List = mongoose.Model('List', ListSchema)
+export const List = mongoose.Model('List',listSchema)

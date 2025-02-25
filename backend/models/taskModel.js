@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const TaskSchema = new mongoose.Schema({
+const taskSchema = new mongoose.Schema({
     title:{
         type:String,
         require:true,
@@ -11,4 +11,4 @@ const TaskSchema = new mongoose.Schema({
     }
 })
 
-export const Task = mongoose.Model('Task', TaskSchema)
+export const Task = mongoose.Model('Task',taskSchema)

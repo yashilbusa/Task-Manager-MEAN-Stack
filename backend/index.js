@@ -3,8 +3,8 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
-import { List } from './models/listModel.js'
-import { Task } from './models/taskModel.js'
+import List from './models/listModel.js'
+import Task  from './models/taskModel.js'
 
 import bodyparser from'body-parser'
 
