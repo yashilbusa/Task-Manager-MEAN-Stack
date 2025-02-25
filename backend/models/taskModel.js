@@ -7,8 +7,8 @@ const taskSchema = new mongoose.Schema({
     },
     listId:{
         type:mongoose.Types.ObjectId,
-        require:true
+        required:true
     }
 })
 
-export const Task = mongoose.Model('Task',taskSchema)
+export const Task = mongoose.model('Task',taskSchema)

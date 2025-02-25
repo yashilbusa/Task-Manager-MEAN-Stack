@@ -3,8 +3,8 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 
-import List from './models/listModel.js'
-import Task  from './models/taskModel.js'
+import {List} from './models/listModel.js'
+import {Task}  from './models/taskModel.js'
 
 import bodyparser from'body-parser'
 
@@ -27,6 +27,10 @@ try{
     console.log(`Error Connecting to MongoDB ${err.message}`)
 }
 
+app.get("/",(req,res)=>{
+    res.send("Task Manager")
+})
+
 app.get("/lists",async(req,res)=>{
    const allList = await List.find()
    res.status(200).send(allList)
@@ -41,10 +45,14 @@ app.post("/lists",(req,res)=>{
     res.status(200).send(newList)
 })
 
-app.patch("/lists/:id",(req,res)=>{
-
+app.put("/lists/:id",async(req,res)=>{
+    await List.updateOne({ _id:req.params.id}, { $set: req.body }).then(()=>{
+        res.status(200)
+    })
 })
 
-app.delete("/lists/:id",(req,res)=>{
-    
+app.delete("/lists/:id",async(req,res)=>{
+    await List.deleteOne({ _id:req.params.id}).then(()=>{
+        res.status(200)
+    })
 })
