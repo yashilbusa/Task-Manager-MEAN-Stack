@@ -12,7 +12,7 @@ export class TaskViewComponent {
 
   constructor(private taskService:TaskService) { }
 
-  createList(e:any){
+  createList(){
     this.taskService.createList('Test').subscribe((res:any)=>{
       console.log(res)
     })
