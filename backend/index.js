@@ -6,13 +6,15 @@ import dotenv from 'dotenv'
 import List from './models/listModel.js'
 import Task from './models/taskModel.js'
 
+import bodyparser from'body-parser'
 
 const app = express()
 const port = 3030
+dotenv.config()
+
+app.use(bodyparser.json())
 
 app.use(cors());
-app.use(express.json())
-dotenv.config()
 
 try{
     await mongoose.connect(process.env.url)
@@ -25,12 +27,18 @@ try{
     console.log(`Error Connecting to MongoDB ${err.message}`)
 }
 
-app.get("/lists",(req,res)=>{
-    res.send("Hello World")
+app.get("/lists",async(req,res)=>{
+   const allList = await List.find()
+   res.status(200).send(allList)
 })
 
 app.post("/lists",(req,res)=>{
 
+    const newList = new List({
+        title:req.body.title
+    })
+    newList.save()
+    res.status(200).send(newList)
 })
 
 app.patch("/lists/:id",(req,res)=>{
