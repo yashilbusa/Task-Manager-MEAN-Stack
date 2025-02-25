@@ -38,8 +38,9 @@ app.get("/lists",async(req,res)=>{
 
 app.post("/lists",(req,res)=>{
 
+    const { title } = req.body
     const newList = new List({
-        title:req.body.title
+        title
     })
     newList.save()
     res.status(200).send(newList)

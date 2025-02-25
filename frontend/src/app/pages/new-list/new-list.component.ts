@@ -13,7 +13,8 @@ export class NewListComponent {
 
   constructor(private taskService:TaskService) { }
     
-  createList(title:String){
+  createList(title:any){
+    // console.log(title)
     this.taskService.createList(title).subscribe((res:any)=>{
       console.log(res)
     })
