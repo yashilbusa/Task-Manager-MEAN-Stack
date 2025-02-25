@@ -24,5 +24,4 @@ export class WebRequestService {
   delete(url:String){
     return this.http.delete(`${this.apiUrl}/${url}`)
   }
-
 }

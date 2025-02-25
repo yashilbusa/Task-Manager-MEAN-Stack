@@ -8,8 +8,4 @@ import { RouterLink } from '@angular/router';
   templateUrl: './task-view.component.html',
   styleUrl: './task-view.component.css'
 })
-export class TaskViewComponent {
-
-
-
-}
+export class TaskViewComponent {}
