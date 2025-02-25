@@ -17,4 +17,12 @@ export class WebRequestService {
     return this.http.post(`${this.apiUrl}/${url}`,payload)
   }
 
+  put(url:any,payload:any){
+    return this.http.put(`${this.apiUrl}/${url}`,payload)
+  }
+
+  delete(url:any){
+    return this.http.delete(`${this.apiUrl}/${url}`)
+  }
+
 }
