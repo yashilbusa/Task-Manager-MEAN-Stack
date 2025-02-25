@@ -11,5 +11,4 @@ export class TaskService {
   createList(title:String){
    return this.webReqSevice.post("lists",title)
   }
-
 }
