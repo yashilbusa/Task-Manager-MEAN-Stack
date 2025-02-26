@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class NewListComponent {
 
-  listTitle: string = '';
+  listTitle: string = "";
 
   constructor(private taskService:TaskService) { }
     

@@ -40,8 +40,8 @@ app.post("/lists",(req,res)=>{
 
     const { title } = req.body
     
-    if (!title || title.trim() === '') {
-        return res.status(400).send("Title is required");
+    if (!title) {
+        return res.status(400).send("Title is Required")
     }
     
     const newList = new List({
