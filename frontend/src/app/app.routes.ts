@@ -18,5 +18,8 @@ export const routes: Routes = [
     },
     {
         path: 'newtask', component:NewTaskComponent
+    },
+    {
+        path: 'lists/:listId/newtask', component:NewTaskComponent
     }
 ];

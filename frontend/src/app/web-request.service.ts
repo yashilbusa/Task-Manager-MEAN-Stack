@@ -9,7 +9,7 @@ export class WebRequestService {
   private apiUrl = "http://localhost:3030"
   constructor(private http:HttpClient) { }
 
-  get(url:any){
+  get(url:String){
     return this.http.get(`${this.apiUrl}/${url}`)
   }
 
