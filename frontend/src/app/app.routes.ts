@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { TaskViewComponent } from './pages/task-view/task-view.component';
 import { NewListComponent } from './pages/new-list/new-list.component';
+import { NewTaskComponent } from './pages/new-task/new-task.component';
 
 export const routes: Routes = [
     {
@@ -14,5 +15,8 @@ export const routes: Routes = [
     },
     {
         path: 'lists/:listId', component:TaskViewComponent
+    },
+    {
+        path: 'newtask', component:NewTaskComponent
     }
 ];

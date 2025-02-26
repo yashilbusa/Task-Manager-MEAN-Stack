@@ -40,28 +40,26 @@
     border-radius: 5px;
     width: 100%;
     color: brown;
-    background-color: lightgray;
 }
 
 .list-menu-item:hover{
-    background-color: lightpink;
+    background-color: lightgray;
 }
 
 .button{
-    display: inline-block;
+    position: absolute;
     font-family: 'Courier New', Courier, monospace;
-    margin-top: 250px;
+    margin-top: 400px;
     margin-right: 100px;
-    padding: 5px;
-    border: 1px solid;
     border-radius: 10px;
     cursor: pointer;
-    background-color: aqua;
-    width: 100%;
+    background-color: lightgray;
+    width: 150px;
+    height: 30px;
 }
 
 .button:hover{
-    background-color: lightblue;
+    background-color: lightgreen;
 }
 
 .task{
@@ -74,5 +72,21 @@
 
 .task:hover{
     background-color: lightgray
+}
+
+.add-task-button{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    bottom: 110px;
+    right: 200px;
+    cursor: pointer;
+    background-color: lightcyan;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.add-task-button:hover{
+    background-color: lightgreen;
 }
 
