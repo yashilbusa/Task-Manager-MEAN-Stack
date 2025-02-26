@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TaskService } from '../../task.service';
-import { Task } from 'zone.js/lib/zone-impl';
 
 @Component({
   selector: 'app-new-task',
@@ -14,7 +13,7 @@ export class NewTaskComponent {
 
   constructor(private taskService:TaskService) { }
 
-  createTask(task:Task){
+  createTask(task:any){
     this.taskService.createNewTask(task).subscribe((res:any)=>{
       console.log(res)
     })
