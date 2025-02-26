@@ -26,19 +26,30 @@ export class TaskViewComponent {
       this.lists = lists
     })
 
-    this.route.params.subscribe((params)=>{
-      // console.log(params);
-      this.selectedListId = params['listId']
-      this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
-        this.tasks = task
-      })
-    })
+    this.route.params.subscribe((params) => {
+      this.selectedListId = params['listId']; // Check if this is undefined
+      if (this.selectedListId) {
+        this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
+          this.tasks = tasks; 
+        });
+      } else {
+        console.error("listId is undefined");
+      }
+    });
+    
   }
 
-  // onDeleteList(){
-  //   this.taskService.deleteList(this.selectedListId).subscribe((res:any)=>{
-  //     this.router.navigate(['/lists'])
-  //     res.send("List Deleted Successfully")
-  //   })
+  onDeleteList() {
+    this.taskService.deleteList(this.selectedListId).subscribe(() => {
+      this.router.navigate(['/lists']);
+    });
+  }
+
+  // onDeleteTask(taskId: string) {
+  //   this.taskService.deleteTask(this.selectedListId, taskId).subscribe(() => {
+  //     this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
+  //       this.tasks = tasks;
+  //     });
+  //   });
   // }
 }

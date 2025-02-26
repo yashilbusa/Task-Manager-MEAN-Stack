@@ -22,10 +22,9 @@ export class NewTaskComponent {
     })
   }
 
-  createTask(task:any){
-    this.taskService.createNewTask(task,this.listId).subscribe((res:any)=>{
-      // console.log(res)
-      this.router.navigate(['/lists',res.listId])
-    })
+  createTask(task: string) {
+    this.taskService.createNewTask(task, this.listId).subscribe((res: any) => {
+      this.router.navigate(['/lists', this.listId]);
+    });
   }
 }

@@ -20,8 +20,8 @@ export class TaskService {
     return this.webReqSevice.put(`lists/${id}`,{title:title})
   }
   
-  getTasks(listId:any){
-    return this.webReqSevice.get(`lists/${listId}/tasks`)
+  getTasks(listId: any) {
+    return this.webReqSevice.get(`lists/${listId}/tasks`);
   }
 
   createNewTask(task:any,listId:any){
@@ -30,6 +30,10 @@ export class TaskService {
 
   deleteList(id:any){
     return this.webReqSevice.delete(`lists/${id}`)
+  }
+
+  deleteTask(listId: any, taskId: any) {
+    return this.webReqSevice.delete(`lists/${listId}/tasks/${taskId}`);
   }
 
 }
