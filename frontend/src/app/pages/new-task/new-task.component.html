@@ -8,10 +8,10 @@
 
         <br>
         <br>
-        
+
         <div class="buttons is-right">
             <button routerLink="/" class="button">Cancel</button>
-            <button routerLink="/" class="button is-info">Create</button>
+            <button (click)="createTask(taskInput.value)" routerLink="/" class="button is-info">Create</button>
         </div>
 
     </div>

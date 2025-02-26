@@ -12,6 +12,10 @@ export class TaskService {
    return this.webReqSevice.post("lists",{title:title})
   }
 
+  createNewTask(task:any){
+    return this.webReqSevice.post("lists",{title:task})
+  }
+
   getLists(){
     return this.webReqSevice.get("lists")
   }

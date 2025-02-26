@@ -3,6 +3,7 @@ import { TaskService } from '../../task.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { List } from '../../models/task.model';
 
 @Component({
   selector: 'app-new-list',
@@ -17,7 +18,7 @@ export class NewListComponent {
 
   constructor(private taskService:TaskService) { }
     
-  createList(title:any){
+  createList(title:List){
     console.log(title)
     this.taskService.createNewList(title).subscribe((res:any)=>{
       console.log(res)
