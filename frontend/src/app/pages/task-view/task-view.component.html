@@ -7,8 +7,8 @@
             </h1>
 
             <div class="list-menu">
-                <a class="list-menu-item">
-                    <p>List 1</p>
+                <a class="list-menu-item" *ngFor="let i of lists" [routerLink]="['/lists',i._id]">
+                    <p>{{i.title}}</p>
                 </a>
             </div>
 
@@ -20,8 +20,8 @@
                 Tasks
             </h1>
 
-            <div class="task">
-                <p>This is Something Task</p>
+            <div class="task" *ngFor="let i of tasks">
+                <p>{{i.title}}</p>
             </div>
         </div>
 
