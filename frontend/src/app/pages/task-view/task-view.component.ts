@@ -36,7 +36,14 @@ export class TaskViewComponent {
         console.error("listId is undefined");
       }
     });
-    
+  }
+
+  getTasks() {
+    if (this.selectedListId) {
+      this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
+        this.tasks = tasks; 
+      });
+    }
   }
 
   onDeleteList() {
@@ -45,11 +52,16 @@ export class TaskViewComponent {
     });
   }
 
-  // onDeleteTask(taskId: string) {
-  //   this.taskService.deleteTask(this.selectedListId, taskId).subscribe(() => {
-  //     this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
-  //       this.tasks = tasks;
-  //     });
-  //   });
-  // }
+  editTask(taskId: string) {
+    this.router.navigate(['/edit-task', taskId]);
+  }
+
+  deleteTask(taskId: string) {
+    if (confirm('Are you sure you want to delete this task?')) {
+      this.taskService.deleteTask(this.selectedListId, taskId).subscribe(() => {
+        console.log('Task deleted');
+        this.getTasks();
+      });
+    }
+  }
 }

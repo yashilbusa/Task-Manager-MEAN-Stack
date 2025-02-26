@@ -1,4 +1,4 @@
-.task-manager{
+.task-manager {
     display: flex;
     width: 75%;
     height: 75%;
@@ -6,17 +6,17 @@
     max-height: 680px;
 }
 
-.sidebar{
+.sidebar {
     display: flex;
     flex-direction: column;
-    width:200px;
+    width: 200px;
     background-color: lightcyan;
     padding: 30px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-.task-list{
+.task-list {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -26,45 +26,10 @@
     background-color: rgb(231, 227, 227);
 }
 
-
-.list-menu{
+.task-item {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.list-menu-item{
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px 15px;
-    margin-top: 5px;
-    border-radius: 5px;
-    width: 100%;
-    color: brown;
-}
-
-.list-menu-item:hover{
-    background-color: lightgray;
-}
-
-
-.list-button{
-    position: absolute;
-    font-family: 'Courier New', Courier, monospace;
-    margin-top: 400px;
-    margin-right: 100px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: lightgray;
-    width: 150px;
-    height: 30px;
-}
-
-.list-button:hover{
-    background-color: lightgreen;
-}
-
-.task{
     background-color: white;
     padding: 5px 15px;
     border-radius: 5px;
@@ -72,11 +37,36 @@
     cursor: pointer;
 }
 
-.task:hover{
-    background-color: lightgray
+.task-item:hover {
+    background-color: lightgray;
 }
 
-.add-task-button{
+.task-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-icon, .delete-icon {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #4CAF50; /* Green for edit */
+}
+
+.delete-icon {
+    color: #F44336; /* Red for delete */
+}
+
+.edit-icon:hover {
+    color: #76d7c4;
+}
+
+.delete-icon:hover {
+    color: #ff6f61;
+}
+
+.add-task-button {
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     bottom: 110px;
@@ -88,11 +78,11 @@
     height: 50px;
 }
 
-.add-task-button:hover{
+.add-task-button:hover {
     background-color: lightgreen;
 }
 
-.edit-button{
+.edit-button {
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 400px;
@@ -103,12 +93,11 @@
     height: 30px;
 }
 
-.edit-button:hover{
+.edit-button:hover {
     background-color: lightgreen;
 }
 
-
-.delete-button{
+.delete-button {
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 400px;
@@ -120,6 +109,6 @@
     height: 30px;
 }
 
-.delete-button:hover{
+.delete-button:hover {
     background-color: lightgreen;
 }
