@@ -1,0 +1,12 @@
+<div class="center">
+  <div class="edit-task-box">
+    <h1 class="title">Edit Task</h1>
+
+    <input [(ngModel)]="task.title" class="input" type="text" placeholder="Edit Task Title" />
+
+    <div class="buttons is-right">
+      <button (click)="cancel()" class="button">Cancel</button>
+      <button (click)="updateTask()" class="button is-info">Update</button>
+    </div>
+  </div>
+</div>
