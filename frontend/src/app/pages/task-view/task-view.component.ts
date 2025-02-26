@@ -35,10 +35,10 @@ export class TaskViewComponent {
     // })
   }
 
-  onDeleteList(){
-    this.taskService.deleteList(this.selectedListId).subscribe((res:any)=>{
-      this.router.navigate(['/lists'])
-      res.send("List Deleted Successfully")
-    })
-  }
+  // onDeleteList(){
+  //   this.taskService.deleteList(this.selectedListId).subscribe((res:any)=>{
+  //     this.router.navigate(['/lists'])
+  //     res.send("List Deleted Successfully")
+  //   })
+  // }
 }
