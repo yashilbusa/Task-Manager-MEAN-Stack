@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.json())
 app.use(bodyparser.json())
 
-
 try{
     await mongoose.connect(process.env.url)
     console.log('Connected to MongoDB');
