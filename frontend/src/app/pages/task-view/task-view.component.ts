@@ -26,13 +26,13 @@ export class TaskViewComponent {
       this.lists = lists
     })
 
-    // this.route.params.subscribe((params)=>{
-    //   // console.log(params);
-    //   this.selectedListId = params['listId']
-    //   this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
-    //     this.tasks = task
-    //   })
-    // })
+    this.route.params.subscribe((params)=>{
+      // console.log(params);
+      this.selectedListId = params['listId']
+      this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
+        this.tasks = task
+      })
+    })
   }
 
   // onDeleteList(){
