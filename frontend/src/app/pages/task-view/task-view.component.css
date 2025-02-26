@@ -93,15 +93,13 @@
 }
 
 .edit-button{
-    display: inline-block;
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 400px;
-    margin-right: 100px;
     border-radius: 10px;
     cursor: pointer;
     background-color: lightcyan;
-    width: 80px;
+    width: 65px;
     height: 30px;
 }
 
@@ -111,15 +109,14 @@
 
 
 .delete-button{
-    display: block;
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 400px;
-    margin-right: 80px;
+    margin-left: 70px;
     border-radius: 10px;
     cursor: pointer;
     background-color: lightcyan;
-    width: 80px;
+    width: 75px;
     height: 30px;
 }
 

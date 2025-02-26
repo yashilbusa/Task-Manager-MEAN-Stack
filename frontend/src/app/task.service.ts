@@ -15,12 +15,21 @@ export class TaskService {
   createNewList(title:any){
    return this.webReqSevice.post("lists",{title:title})
   }
+
+  updateList(id:any,title:any){
+    return this.webReqSevice.put(`lists/${id}`,{title:title})
+  }
   
-  getTasks(listId:String){
+  getTasks(listId:any){
     return this.webReqSevice.get(`lists/${listId}/tasks`)
   }
 
-  createNewTask(task:any,listId:String){
+  createNewTask(task:any,listId:any){
     return this.webReqSevice.post(`lists/${listId}/tasks`,{title:task})
   }
+
+  deleteList(id:any){
+    return this.webReqSevice.delete(`lists/${id}`)
+  }
+
 }

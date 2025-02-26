@@ -1,0 +1,16 @@
+<div class="center">
+    <div class="box">
+        <h1 class="title">
+            Edit List
+        </h1>
+
+        <input #updateListInput class="input" type="text" placeholder="Update List Name Here">
+        <br>
+        <br>
+        <div class="buttons is-right">
+            <button routerLink="/" class="button">Cancel</button>
+            <button (click)="editList(updateListInput.value)" class="button is-info">Update</button>
+        </div>
+
+    </div>
+</div>

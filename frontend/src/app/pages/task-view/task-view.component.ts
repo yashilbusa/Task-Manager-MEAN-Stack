@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TaskService } from '../../task.service';
 import { CommonModule } from '@angular/common';
+import { parseArgs } from 'util';
 
 @Component({
   selector: 'app-task-view',
@@ -15,7 +16,9 @@ export class TaskViewComponent {
   lists:any[]= []
   tasks:any[]= []
 
-  constructor(private taskService:TaskService, private route:ActivatedRoute){}
+  selectedListId!:any
+
+  constructor(private taskService:TaskService, private route:ActivatedRoute, private router:Router){}
 
   ngOnInit() {
     
@@ -23,12 +26,26 @@ export class TaskViewComponent {
       this.lists = lists
     })
 
-    this.route.params.subscribe((params)=>{
-      // console.log(params);
-      this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
-        this.tasks = task
-      })
-    })
-    
+    // this.route.params.subscribe((params)=>{
+    //   // console.log(params);
+    //   this.selectedListId = params['listId']
+    //   this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
+    //     this.tasks = task
+    //   })
+    // })
+
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.selectedListId = params.get('listId')
+        this.taskService.getTasks(params.get('listId')).subscribe((task:any)=>{
+            this.tasks = task
+        })
+    });
   }
+
+  // onDeleteList(){
+  //   this.taskService.deleteList(this.selectedListId).subscribe((res:any)=>{
+  //     this.router.navigate(['/lists'])
+  //     res.send("List Deleted Successfully")
+  //   })
+  // }
 }

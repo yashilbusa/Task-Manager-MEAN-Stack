@@ -20,13 +20,13 @@
                 Tasks
             </h1>
 
-            <button class="edit-button">
+            <button [routerLink]="['/editlist',selectedListId]" class="edit-button">
                 Edit
             </button>
 
-            <button class="delete-button">
+            <!-- <button (click)="onDeleteList()" class="delete-button">
                 Delete
-            </button>
+            </button> -->
 
 
             <div class="task" *ngFor="let i of tasks">
