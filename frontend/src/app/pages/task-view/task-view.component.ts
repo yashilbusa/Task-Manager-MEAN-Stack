@@ -23,12 +23,12 @@ export class TaskViewComponent {
       this.lists = lists
     })
 
-    // this.route.params.subscribe((params)=>{
-    //   // console.log(params);
-    //   this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
-    //     this.tasks = task
-    //   })
-    // })
+    this.route.params.subscribe((params)=>{
+      // console.log(params);
+      this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
+        this.tasks = task
+      })
+    })
     
   }
 }

@@ -26,6 +26,7 @@
     background-color: rgb(231, 227, 227);
 }
 
+
 .list-menu{
     display: flex;
     flex-direction: column;
@@ -46,7 +47,8 @@
     background-color: lightgray;
 }
 
-.button{
+
+.list-button{
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     margin-top: 400px;
@@ -58,7 +60,7 @@
     height: 30px;
 }
 
-.button:hover{
+.list-button:hover{
     background-color: lightgreen;
 }
 
@@ -90,3 +92,37 @@
     background-color: lightgreen;
 }
 
+.edit-button{
+    display: inline-block;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 400px;
+    margin-right: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: lightcyan;
+    width: 80px;
+    height: 30px;
+}
+
+.edit-button:hover{
+    background-color: lightgreen;
+}
+
+
+.delete-button{
+    display: block;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 400px;
+    margin-right: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: lightcyan;
+    width: 80px;
+    height: 30px;
+}
+
+.delete-button:hover{
+    background-color: lightgreen;
+}

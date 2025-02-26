@@ -12,13 +12,22 @@
                 </a>
             </div>
 
-            <button routerLink="/newlist" class="button">+ New List</button>
+            <button routerLink="/newlist" class="list-button">+ New List</button>
         </div>
 
         <div class="task-list">
             <h1 class="title">
                 Tasks
             </h1>
+
+            <button class="edit-button">
+                Edit
+            </button>
+
+            <button class="delete-button">
+                Delete
+            </button>
+
 
             <div class="task" *ngFor="let i of tasks">
                 <p>{{i.title}}</p>
