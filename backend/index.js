@@ -88,6 +88,11 @@ app.delete("/lists/:listId/tasks/:taskId",async(req,res)=>{
         res.status(200)
     })
 })
+app.delete("/lists/:listId/tasks",async(req,res)=>{
+    await Task.deleteMany({listId:req.params.listId}).then(()=>{
+        res.status(200)
+    })
+})
 
 app.get("/lists/:listId/tasks/:taskId",async(req,res)=>{
     const allTask = await Task.find({ _id:req.params.taskId,listId:req.params.listId})

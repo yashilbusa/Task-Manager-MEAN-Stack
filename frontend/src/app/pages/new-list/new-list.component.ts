@@ -18,10 +18,9 @@ export class NewListComponent {
   constructor(private taskService:TaskService, private router: Router) { }
     
   createList(title:any){
-    console.log(title)
+    // console.log(title)
     this.taskService.createNewList(title).subscribe((res:any)=>{
-      console.log(res)
-
+      // console.log(res)
       this.router.navigate(['/lists',res._id])
     })
   }

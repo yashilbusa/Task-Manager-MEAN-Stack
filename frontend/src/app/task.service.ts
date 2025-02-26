@@ -13,7 +13,7 @@ export class TaskService {
   }
 
   createNewList(title:any){
-   return this.webReqSevice.post("lists",{title})
+   return this.webReqSevice.post("lists",{title:title})
   }
   
   getTasks(listId:String){
@@ -21,6 +21,6 @@ export class TaskService {
   }
 
   createNewTask(task:any,listId:String){
-    return this.webReqSevice.post(`lists/${listId}/tasks`,{task})
+    return this.webReqSevice.post(`lists/${listId}/tasks`,{title:task})
   }
 }

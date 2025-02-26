@@ -24,7 +24,7 @@ export class TaskViewComponent {
     })
 
     // this.route.params.subscribe((params)=>{
-    //   console.log(params);
+    //   // console.log(params);
     //   this.taskService.getTasks(params['listId']).subscribe((task:any)=>{
     //     this.tasks = task
     //   })

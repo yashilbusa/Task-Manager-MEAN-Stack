@@ -24,8 +24,8 @@ export class NewTaskComponent {
 
   createTask(task:any){
     this.taskService.createNewTask(task,this.listId).subscribe((res:any)=>{
-      console.log(res)
-      this.router.navigate(['/lists',res._id])
+      // console.log(res)
+      this.router.navigate(['/lists',res.listId])
     })
   }
 }
