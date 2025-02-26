@@ -33,19 +33,12 @@ export class TaskViewComponent {
     //     this.tasks = task
     //   })
     // })
-
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.selectedListId = params.get('listId')
-        this.taskService.getTasks(params.get('listId')).subscribe((task:any)=>{
-            this.tasks = task
-        })
-    });
   }
 
-  // onDeleteList(){
-  //   this.taskService.deleteList(this.selectedListId).subscribe((res:any)=>{
-  //     this.router.navigate(['/lists'])
-  //     res.send("List Deleted Successfully")
-  //   })
-  // }
+  onDeleteList(){
+    this.taskService.deleteList(this.selectedListId).subscribe((res:any)=>{
+      this.router.navigate(['/lists'])
+      res.send("List Deleted Successfully")
+    })
+  }
 }
