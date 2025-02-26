@@ -25,7 +25,7 @@ export class EditListComponent {
   editList(title:any){
     this.taskService.updateList(this.listId,title).subscribe((res:any)=>{
       console.log("List Successfully Updated")
-      this.router.navigate(['/lists'])
+      this.router.navigate([`/lists/${this.listId}`]);
     })
   }
 }
