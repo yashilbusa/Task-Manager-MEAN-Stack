@@ -4,13 +4,13 @@
             Create a New List
         </h1>
 
-        <input [(ngModel)]="listTitle" class="input" type="text" placeholder="Enter List Name Here">
-
+        <input #listInput class="input" type="text" placeholder="Enter List Name Here">
+        <!-- [(ngModel)]="listTitle" -->
         <br>
         <br>
         <div class="buttons is-right">
             <button routerLink="/" class="button">Cancel</button>
-            <button (click)="createList()" routerLink="/" class="button is-info">Create</button>
+            <button (click)="createList(listInput.value)" routerLink="/" class="button is-info">Create</button>
         </div>
 
     </div>

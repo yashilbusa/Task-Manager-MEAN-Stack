@@ -13,13 +13,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class NewListComponent {
 
-  listTitle: string = "";
+  // listTitle: string = "";
 
   constructor(private taskService:TaskService) { }
     
-  createList(){
-    // console.log(title)
-    this.taskService.createList(this.listTitle).subscribe((res:any)=>{
+  createList(title:any){
+    console.log(title)
+    this.taskService.createNewList(title).subscribe((res:any)=>{
       console.log(res)
     })
   }

@@ -9,19 +9,19 @@ export class WebRequestService {
   private apiUrl = "http://localhost:3030"
   constructor(private http:HttpClient) { }
 
-  get(url:String){
+  get(url:any){
     return this.http.get(`${this.apiUrl}/${url}`)
   }
 
-  post(url:String,payload:String){
+  post(url:any,payload:any){
     return this.http.post(`${this.apiUrl}/${url}`,payload)
   }
 
-  put(url:String,payload:String){
+  put(url:any,payload:any){
     return this.http.put(`${this.apiUrl}/${url}`,payload)
   }
 
-  delete(url:String){
+  delete(url:any){
     return this.http.delete(`${this.apiUrl}/${url}`)
   }
 }

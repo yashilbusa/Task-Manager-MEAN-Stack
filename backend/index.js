@@ -12,9 +12,10 @@ const app = express()
 const port = 3030
 dotenv.config()
 
+app.use(cors());
+app.use(express.json())
 app.use(bodyparser.json())
 
-app.use(cors());
 
 try{
     await mongoose.connect(process.env.url)
@@ -40,14 +41,13 @@ app.post("/lists",(req,res)=>{
 
     const { title } = req.body
     
-    if (!title) {
-        return res.status(400).send("Title is Required")
-    }
-    
     const newList = new List({
         title
     })
+
     newList.save()
+    console.log(req.body)
+    
     res.status(200).send(newList)
 })
 
