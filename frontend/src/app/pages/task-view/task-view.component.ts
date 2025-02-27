@@ -38,24 +38,16 @@ export class TaskViewComponent {
     });
   }
 
-  getTasks() {
-    if (this.selectedListId) {
-      this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
-        this.tasks = tasks; 
-      });
-    }
-  }
-
   onDeleteList() {
     this.taskService.deleteList(this.selectedListId).subscribe(() => {
       this.router.navigate(['/lists']);
     });
   }
-
+  
   editTask(taskId: string) {
     this.router.navigate(['/edit-task', taskId]);
   }
-
+  
   deleteTask(taskId: string) {
     if (confirm('Are you sure you want to delete this task?')) {
       this.taskService.deleteTask(this.selectedListId, taskId).subscribe(() => {
@@ -65,4 +57,11 @@ export class TaskViewComponent {
     }
   }
   
+  getTasks() {
+    if (this.selectedListId) {
+      this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
+        this.tasks = tasks; 
+      });
+    }
+  }
 }
