@@ -7,8 +7,8 @@ import { environment } from '../environments/environment.development';
 })
 export class WebRequestService {
 
-  // apiUrl = "http://localhost:3030"
   apiUrl = environment.backendUrl
+
   constructor(private http:HttpClient) { }
 
   get(url:String){
