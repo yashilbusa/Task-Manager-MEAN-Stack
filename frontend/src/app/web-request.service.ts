@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebRequestService {
 
-  private apiUrl = "http://localhost:3030"
+  apiUrl = environment.backendUrl
   constructor(private http:HttpClient) { }
 
   get(url:String){
