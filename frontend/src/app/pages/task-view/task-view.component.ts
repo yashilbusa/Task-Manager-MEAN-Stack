@@ -27,7 +27,7 @@ export class TaskViewComponent {
     })
 
     this.route.params.subscribe((params) => {
-      this.selectedListId = params['listId']; // Check if this is undefined
+      this.selectedListId = params['listId']; 
       if (this.selectedListId) {
         this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
           this.tasks = tasks; 
