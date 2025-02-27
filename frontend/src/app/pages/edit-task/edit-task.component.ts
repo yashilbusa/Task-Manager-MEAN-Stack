@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { TaskService } from '../../task.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-task',
   standalone: true,
-  imports: [RouterLink,FormsModule],
+  imports: [FormsModule],
   templateUrl: './edit-task.component.html',
   styleUrl: './edit-task.component.css'
 })
