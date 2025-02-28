@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    backendUrl: "http://localhost:3030"
+    backendUrl: "https://task-manager-mean-stack-theta.vercel.app/"
 };
