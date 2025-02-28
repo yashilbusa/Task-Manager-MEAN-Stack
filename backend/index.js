@@ -12,7 +12,7 @@ const app = express()
 const port = 6060
 dotenv.config()
 
-app.use(cors({origin: "https://task-manager-rho-wheat.vercel.app/lists"}));
+app.use(cors({origin: "https://task-manager-rho-wheat.vercel.app/lists" ,credentials:true}));
 app.use(express.json())
 app.use(bodyparser.json())
 
