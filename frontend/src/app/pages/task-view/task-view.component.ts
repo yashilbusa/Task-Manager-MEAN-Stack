@@ -55,8 +55,7 @@ export class TaskViewComponent {
       });
     }
   }
-  
-  getTasks() {
+    getTasks() {
     if (this.selectedListId) {
       this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
         this.tasks = tasks; 
