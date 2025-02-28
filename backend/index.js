@@ -9,7 +9,7 @@ import {Task}  from './models/taskModel.js'
 import bodyparser from'body-parser'
 
 const app = express()
-const port = 3030
+const port = 6060
 dotenv.config()
 
 app.use(cors());
