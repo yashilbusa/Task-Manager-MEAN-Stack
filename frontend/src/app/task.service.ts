@@ -32,10 +32,6 @@ export class TaskService {
     return this.webReqSevice.put(`tasks/${taskId}`, { title:title });
   }
 
-  getTask(taskId: string) {
-    return this.webReqSevice.get(`tasks/${taskId}`);
-  }
-
   deleteList(id:any){
     return this.webReqSevice.delete(`lists/${id}`)
   }
