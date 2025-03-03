@@ -28,9 +28,13 @@ export class TaskService {
     return this.webReqSevice.post(`lists/${listId}/tasks`,{title:task})
   }
 
-  updateTask(taskId: string, title: string) {
-    return this.webReqSevice.put(`tasks/${taskId}`, { title:title });
+  updateTask(listId: string, taskId: string, title: string) {
+    return this.webReqSevice.put(`lists/${listId}/tasks/${taskId}`, { title: title });
   }
+  
+  getTask(listId: string, taskId: string) {
+    return this.webReqSevice.get(`lists/${listId}/tasks/${taskId}`);
+  }  
 
   deleteList(id:any){
     return this.webReqSevice.delete(`lists/${id}`)

@@ -20,21 +20,26 @@ export class TaskViewComponent {
   constructor(private taskService:TaskService, private route:ActivatedRoute, private router:Router){}
 
   ngOnInit() {
-    
-    this.taskService.getLists().subscribe((lists:any)=>{
-      this.lists = lists
-    })
-
+    this.taskService.getLists().subscribe((lists: any) => {
+      this.lists = lists;
+    });
+  
     this.route.params.subscribe((params) => {
       this.selectedListId = params['listId']; 
       if (this.selectedListId) {
-        this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
-          this.tasks = tasks; 
-        });
+        this.getTasks(); // Fetch tasks when a new list is selected
       } else {
         console.error("listId is undefined");
       }
     });
+  }
+  
+  getTasks() {
+    if (this.selectedListId) {
+      this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
+        this.tasks = tasks; 
+      });
+    }
   }
 
   onDeleteList() {
@@ -44,8 +49,8 @@ export class TaskViewComponent {
   }
   
   editTask(taskId: string) {
-    this.router.navigate(['/edit-task', taskId]);
-  }
+    this.router.navigate(['/edit-task', this.selectedListId, taskId]);
+  }  
   
   deleteTask(taskId: string) {
     if (confirm('Are you sure you want to delete this task?')) {
@@ -55,11 +60,5 @@ export class TaskViewComponent {
       });
     }
   }
-    getTasks() {
-    if (this.selectedListId) {
-      this.taskService.getTasks(this.selectedListId).subscribe((tasks: any) => {
-        this.tasks = tasks; 
-      });
-    }
-  }
+
 }

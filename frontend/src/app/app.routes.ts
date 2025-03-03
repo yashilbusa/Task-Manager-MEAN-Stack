@@ -27,7 +27,8 @@ export const routes: Routes = [
     {
         path: 'editlist/:listId', component:EditListComponent
     },
-    { 
-        path: 'edit-task/:taskId', component:EditTaskComponent 
+    {   
+        path: 'edit-task/:listId/:taskId', component: EditTaskComponent 
     }
+
 ];

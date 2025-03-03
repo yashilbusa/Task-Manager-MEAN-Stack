@@ -12,12 +12,7 @@ const app = express()
 const port = 6060
 dotenv.config()
 
-app.use(cors({
-    origin: "http://localhost:4200/" ,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials:true
-}));
+app.use(cors());
 
 app.use(express.json())
 app.use(bodyparser.json())
@@ -83,11 +78,18 @@ app.post("/lists/:listId/tasks",(req,res)=>{
     res.status(200).send(newTask)
 })
 
-app.put("/lists/:listId/tasks/:taskId",async(req,res)=>{
-    await Task.updateOne({ _id:req.params.taskId,listId:req.params.listId}, { $set: req.body }).then(()=>{
-        res.status(200)
-    })
-})
+app.put("/lists/:listId/tasks/:taskId", async (req, res) => {
+    try {
+        await Task.updateOne(
+            { _id: req.params.taskId, listId: req.params.listId },
+            { $set: req.body }
+        );
+        res.status(200).json({ message: "Task updated successfully" });
+    } catch (error) {
+        res.status(500).json({ message: "Error updating task", error });
+    }
+});
+
 
 app.delete("/lists/:listId/tasks/:taskId",async(req,res)=>{
     await Task.deleteOne({ _id:req.params.taskId,listId:req.params.listId}).then(()=>{
