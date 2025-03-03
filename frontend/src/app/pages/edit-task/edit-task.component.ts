@@ -35,12 +35,13 @@ export class EditTaskComponent {
 
   updateTask() {
     if (this.taskId && this.task.title) {
-      this.taskService.updateTask(this.taskId, this.task).subscribe(() => {
+      this.taskService.updateTask(this.taskId, this.task.title).subscribe(() => {
         console.log('Task updated successfully');
-        this.router.navigate(['/lists', this.taskId]);
+        this.router.navigate(['/lists']);
       });
     }
   }
+  
   cancel() {
     this.router.navigate(['/lists', this.taskId]); 
   }
