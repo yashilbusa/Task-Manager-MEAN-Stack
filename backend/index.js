@@ -13,7 +13,7 @@ const port = 6060
 dotenv.config()
 
 app.use(cors({
-    origin: "https://task-manager-rho-wheat.vercel.app/lists" ,
+    origin: "http://localhost:4200/" ,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials:true
